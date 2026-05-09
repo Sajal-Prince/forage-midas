@@ -1,5 +1,8 @@
 package com.jpmc.midascore;
 
+import com.jpmc.midascore.entity.TransactionRecord;
+import com.jpmc.midascore.repository.TransactionRepository;
+import com.jpmc.midascore.repository.UserRepository;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,6 +19,10 @@ public class TaskThreeTests {
 
     @Autowired
     private KafkaProducer kafkaProducer;
+    @Autowired
+    private UserRepository userRepository;
+    @Autowired
+    private TransactionRepository transactionRepository;
 
     @Autowired
     private UserPopulator userPopulator;
