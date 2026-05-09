@@ -15,12 +15,14 @@ public class TransactionRecord {
     @JoinColumn(name = "recipient_id_id")
     private UserRecord recipient;
     private float amount;
+    private float incentive;
 
-    public TransactionRecord(long transactionId, UserRecord sender, UserRecord recipient, float amount) {
+    public TransactionRecord(long transactionId, UserRecord sender, UserRecord recipient, float amount, float incentive) {
         this.transactionId = transactionId;
         this.sender = sender;
         this.recipient = recipient;
         this.amount = amount;
+        this.incentive = incentive;
     }
 
     public TransactionRecord() {
@@ -56,5 +58,13 @@ public class TransactionRecord {
 
     public void setAmount(float amount) {
         this.amount = amount;
+    }
+
+    public float getIncentive() {
+        return incentive;
+    }
+
+    public void setIncentive(float incentive) {
+        this.incentive = incentive;
     }
 }
